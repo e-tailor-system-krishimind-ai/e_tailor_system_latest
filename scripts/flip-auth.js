@@ -34,7 +34,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
   if (res.ok) {
     localStorage.setItem("userId", result.userId);
-    window.location.href = "../pages/landing-dashboard.html";
+    window.location.href = "../customer/landing-dashboard.html";
   } else {
     alert(result.message);
   }

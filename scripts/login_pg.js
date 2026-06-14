@@ -21,6 +21,6 @@ document.getElementById("loginForm").addEventListener("submit", async e => {
 
   localStorage.setItem("user", JSON.stringify(data.user));
 
-  window.location.href = "../pages/landing-dashboard.html";
+  window.location.href = "../customer/landing-dashboard.html";
 });
 

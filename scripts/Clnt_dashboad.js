@@ -16,7 +16,7 @@ if (user) {
 // Logout
 function logout() {
   localStorage.clear();
-  window.location.href = "../pages/login_pg.html";
+  window.location.href = "../public/login_pg.html";
 }
 
 // Sidebar active link highlight
@@ -34,7 +34,7 @@ const logoutBtn = document.querySelector(".user button");
 if (logoutBtn) {
   logoutBtn.addEventListener("click", () => {
     localStorage.clear();
-    window.location.href = "../pages/login_pg.html";
+    window.location.href = "../public/login_pg.html";
   });
 }
 
@@ -50,7 +50,7 @@ document.querySelector("form").addEventListener("submit", e => {
   const username = document.querySelector('input[type="text"]').value;
   localStorage.setItem("username", username);
 
-  window.location.href = "../pages/Clnt_dashboad.html";
+  window.location.href = "./Clnt_dashboad.html";
 });
 
 

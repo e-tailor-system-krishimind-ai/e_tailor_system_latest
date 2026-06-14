@@ -5,7 +5,7 @@
 const userData = JSON.parse(localStorage.getItem("user"));
 
 if (!userData) {
-  window.location.href = "../pages/flip-auth.html";
+  window.location.href = "../public/flip-auth.html";
 }
 
 /* Username */
