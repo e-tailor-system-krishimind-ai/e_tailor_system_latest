@@ -233,24 +233,47 @@ Responsible for:
 
 ## Repository Structure
 
-> This repository structure represents the intended modular architecture and may evolve as implementation progresses.
+The implemented frontend is organized by feature, with shared client modules separated from feature-specific files:
 
 ```text
-e-tailor/
+e-tailor-system-latest/
 ├── frontend/
-├── backend/
-├── perception/
-├── measurement/
-├── avatar/
-├── garment/
-├── simulation/
-├── fit/
-├── infrastructure/
-├── datasets/
-├── tests/
-├── docs/
-└── scripts/
+│   ├── index.html
+│   ├── features/
+│   │   ├── authentication/{pages,styles,scripts}/
+│   │   ├── landing/{pages,styles,scripts}/
+│   │   ├── admin/{pages,styles,scripts}/
+│   │   ├── client-dashboard/pages/
+│   │   ├── measurements/pages/
+│   │   ├── garments/{pages,styles}/
+│   │   ├── orders/pages/
+│   │   ├── payments/pages/
+│   │   ├── profile/pages/
+│   │   └── virtual-try-on/pages/
+│   ├── shared/{styles,scripts}/
+│   └── assets/{images,videos,models,fonts}/ (when source assets are available)
+├── server.js
+├── package.json
+├── package-lock.json
+└── docs/refactor-report.md
 ```
+
+Local asset files were not included in this repository snapshot. Existing pages reference images, videos, and a 3D model; the references now point to their intended `frontend/assets/` categories. Add the original media to those directories when available.
+
+## Run the Frontend
+
+Install dependencies and start the Express static server:
+
+```sh
+npm install
+npm start
+```
+
+Open `http://localhost:8080/`. Set `PORT` to use a different port. The server redirects the original root-level page URLs to their canonical feature pages.
+
+This repository contains no API route implementation. Existing login, registration, dashboard, and order scripts still call `http://localhost:5000`; those workflows require the separately provided API service.
+
+See `docs/refactor-report.md` for the page map, compatibility routes, and verification results.
 
 ---
 
